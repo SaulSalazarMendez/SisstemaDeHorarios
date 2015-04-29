@@ -5,7 +5,7 @@
 
 <div class="col-md-4 col-sm-3 col-xs-6">
 
-<form name="formulario" method="post" action="<?=base_url()?>index.php/main/guardaMaestro">
+<form name="formulario" method="post" action="<?=base_url()?>index.php/catedratico/guardaMaestro">
 
 	<div class="panel panel-default">
 	  <!-- Default panel contents -->
