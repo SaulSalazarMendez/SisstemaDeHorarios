@@ -13,7 +13,7 @@
 	  Formulario
 	  </div>
 		
-
+ 
 	<?php 
 	if ($consulta!=false){
 		

@@ -77,7 +77,7 @@ class Catedratico extends CI_Controller
 		
 		
 		//redirect('main/verMaestros');
-	}
+	} 
 	
 	function guardaCalendario(){
 	    echo "horas:<br>";
