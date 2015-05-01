@@ -37,10 +37,6 @@ class Carreras extends CI_Controller
 		
 	}
 	
-	function eliminarCarrera()
-	{
-		
-	}
 	
 }
 
