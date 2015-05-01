@@ -5,7 +5,7 @@ class Carreras extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-
+		$this->load->model('modelo_carrera');
 		
 	}
 
@@ -14,11 +14,34 @@ class Carreras extends CI_Controller
 
 		
 	}
-	function altaCarreras(){
+	function altaCarreras()
+	{
 		$this->load->view('carreras/cabeza');
 		$this->load->view('carreras/contenido');
 		$this->load->view('carreras/footer');
 	}
+	
+	function agregarCarrera()
+	{
+		if(isset($_POST['btnRegistrar']))
+		{
+			$datosCarrera = array
+			(
+				'nombre' => $this->input->post('txtNombreCarrera',TRUE)				
+			);
+			$this->modelo_carrera->setCarrera($datosCarrera);
+			$this->load->view('carreras/cabeza');
+			$this->load->view('carreras/contenido');
+			$this->load->view('carreras/footer');
+		}
+		
+	}
+	
+	function eliminarCarrera()
+	{
+		
+	}
+	
 }
 
 /* End of file welcome.php */
