@@ -19,13 +19,23 @@
 body {
     font-family: 'Open Sans', sans-serif;
     line-height:28px;
-
+ background-color: rgba(0, 0, 0, 0.4);    
+   
 }
 #divSalon{
     margin-right: 10%;
     margin-left: 10%;
 }
-
+.cajaEdicion{
+    background: #FFF;   
+    position: absolute;
+    z-index: 10000;
+    margin-top: 30%;
+}
+#xcerrar{
+    position: absolute;
+    padding-left: 95%;
+}
 
 .img{
     width:100px;
