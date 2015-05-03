@@ -15,6 +15,8 @@
     <link href="<?=base_url()?>CSS/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="<?=base_url()?>CSS/style.css" rel="stylesheet" />
+    <link href="<?=base_url()?>CSS/bootstrap-modal.css" rel="stylesheet" />
+    <link href="<?=base_url()?>CSS/bootstrap-modal-bs3patch.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
 
@@ -28,12 +30,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h2>Modulo de administración</h2>
+                <h2>Modulo de administraciÃ³n</h2>
 
-            </div>
-
-            <div class="right-div">
-                <a href="#" class="btn btn-danger pull-right">Cerrar Sesión</a>
             </div>
         </div>
     </div>
@@ -68,9 +66,13 @@
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/experiencias/bajaExperiencias">Bajas</a></li>
                                 </ul>
                             </li>
-
-                            <li><a href="<?=base_url()?>index.php/salon/registrarSalon">Salones</a></li>
-                             <li><a href="<?=base_url()?>index.php/horario/crearHorarios">Crear horarios</a></li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Salones<i class="glyphicon glyphicon-chevron-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/">Salones registrados</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/registrarSalon">Registro</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
