@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h2>Modulo de administraciÃ³n</h2>
+                <h2>Modulo de administración</h2>
 
             </div>
         </div>
