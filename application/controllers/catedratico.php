@@ -9,6 +9,14 @@ class Catedratico extends CI_Controller
 
 		
 	}
+	
+	function  algo(){
+	  	$datos=array(  'consulta' => $this->Maestros->getAll() );
+		$this->load->view('cabeza');
+		$this->load->view('catedraticos/contenido',$datos);
+		$this->load->view('pie');
+	
+	}
 
 	function index()
 	{
@@ -75,8 +83,9 @@ class Catedratico extends CI_Controller
 			$this->load->view('catedraticos/horario',$datos);
 		}
 		
+		
 		//redirect('main/verMaestros');
-	}
+	} 
 	
 	function guardaCalendario(){
 	    echo "horas:<br>";
@@ -129,5 +138,36 @@ class Catedratico extends CI_Controller
 	    redirect('catedratico/horarioMaestro/'.$id);
 	    
 	 
+	}
+	/*
+	* Guarda al mestro del formulario.
+	* Nota: el calendario se guarda en formulario de horario.
+	* al finalizar redireciona al controlador catedratico.
+	*/
+	public function guardaMaestro(){
+		if ($this->input->post('operacion',TRUE)=='save'){
+			$datos=array(
+				'nombre' => $this->input->post('nombre',TRUE),
+				'apellidos' => $this->input->post('apellidos',TRUE),
+				'matricula' => $this->input->post('matricula',TRUE)
+				
+			);
+			
+			$this->Maestros->saveTeacher($datos);
+		}else{
+			print_r($_POST);
+			$datos=array(
+				'nombre' => $this->input->post('nombre',TRUE),
+				'apellidos' =>$this->input->post('apellidos',TRUE),
+				'matricula' =>$this->input->post('matricula',TRUE),
+				'id' => $this->input->post('id',TRUE)
+			);
+			$this->Maestros->updateTeacher($datos);
+			
+		}
+		redirect('catedratico/');
+		
+		
+		
 	}
 }

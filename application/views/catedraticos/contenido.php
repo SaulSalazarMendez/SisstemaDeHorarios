@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <h4 class="header-line">Registro de Catedráticos</h4>
             </div>
-        </div>
+        </div> 
              
                 <div class="row">
             
