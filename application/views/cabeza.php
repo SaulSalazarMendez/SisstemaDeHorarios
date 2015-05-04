@@ -28,12 +28,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h2>Modulo de administración</h2>
+                <h2>Modulo de administraciÃ³n</h2>
 
             </div>
 
             <div class="right-div">
-                <a href="#" class="btn btn-danger pull-right">Cerrar Sesión</a>
+                <a href="#" class="btn btn-danger pull-right">Cerrar SesiÃ³n</a>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Carreras <i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/altaCarreras">Registro</a></li>
-                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/bajaCarreras">Bajas</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/mostrarCarrera">Mostrar</a></li>
                                 </ul>
                             </li>
                             <li>

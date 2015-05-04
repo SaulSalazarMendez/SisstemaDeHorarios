@@ -9,7 +9,7 @@ class Modelo_carrera extends CI_Model
 		parent::__construct();
 	}
 	
-	//Función que inserta las carreras!
+	//FunciÃ³n que inserta las carreras!
 	function setCarrera($datosCarrera)
 	{
 		
@@ -30,7 +30,7 @@ class Modelo_carrera extends CI_Model
 		
 	}
 	
-	//Función que devuelve las carreras existentes!
+	//FunciÃ³n que devuelve las carreras existentes!
 	function getCarrera()
 	{
 		$connStr = 'sqlite:db/horarios.db';
@@ -38,7 +38,7 @@ class Modelo_carrera extends CI_Model
 		{
 			$conn = new PDO($connStr);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$query = $conn->query("SELECT nombre FROM carrera");
+			$query = $conn->query("SELECT * FROM carrera");
 			if ($query != false)
 			{
 					return $query;
@@ -52,7 +52,50 @@ class Modelo_carrera extends CI_Model
 		}
 	}
 	
-	//Función que elimina las carreras existentes!
+	
+	function editCarrera($id)
+	{
+		$connStr = 'sqlite:db/horarios.db';
+		try {
+			$conn = new PDO($connStr);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$query = $conn->query("SELECT * FROM carrera where id=".$id);
+			if ($query != false)
+				foreach($query as $result){
+				return   $result;
+			}
+			else
+				return false;
+			}		 
+		catch( PDOException $Exception ) 
+		{
+			return false; 
+		}
+	}
+	
+	
+	function updateCarrera($datosCarrera)
+	{
+		$connStr = 'sqlite:db/horarios.db';
+		try 
+		{
+			$conn = new PDO($connStr);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$cmd= 'update carrera set ';
+			$cmd=$cmd.'nombre="'.$datosCarrera['nombre'];
+			$cmd=$cmd.'" where id='.$datosCarrera['id'];
+			echo $cmd;
+			$conn->query($cmd);
+				
+		} 
+		catch( PDOException $Exception ) 
+		{
+			echo $Exception->getMessage() ."\n"; 
+		}
+	}
+	
+	
+	//FunciÃ³n que elimina las carreras existentes!
 	function deleteCarrera($datosCarrera)
 	{
 		$connStr = 'sqlite:db/horarios.db';
@@ -60,14 +103,14 @@ class Modelo_carrera extends CI_Model
 		{
 			$conn = new PDO($connStr);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$cmd="DELETE FROM carrera WHERE nombre ='".$datosCarrera['nombre']."'";
+			$cmd="DELETE FROM carrera WHERE id ='".$datosCarrera['id']."'";
 			$conn->query($cmd);
 		} 
 		catch( PDOException $Exception ) 
 		{
 			echo $Exception->getMessage() ."\n"; 
 		}
-		redirect('carreras/bajaCarreras');
+		
 	}
 	
 	

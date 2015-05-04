@@ -16,7 +16,7 @@
                             <form action="<?=base_url()?>index.php/carreras/agregarCarrera" method="post" accept-charset="utf-8">
                               <div class="form-group">
                                 <br>
-                                <label for="licenciatura">Nombre de la licenciatura</label>
+                                <label for="licenciatura">Nombre de la licenciatura</label><br><br>
                                 <input type="text" name="txtNombreCarrera" value="" id="txtNombreCarrera" maxlength="30" size="40" class="form-control" required />
                               </div>
                                 <br>
