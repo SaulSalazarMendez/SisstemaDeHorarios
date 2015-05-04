@@ -9,6 +9,14 @@ class Catedratico extends CI_Controller
 
 		
 	}
+	
+	function  algo(){
+	  	$datos=array(  'consulta' => $this->Maestros->getAll() );
+		$this->load->view('cabeza');
+		$this->load->view('catedraticos/contenido',$datos);
+		$this->load->view('pie');
+	
+	}
 
 	function index()
 	{
