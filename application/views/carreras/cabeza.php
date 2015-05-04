@@ -30,12 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-<<<<<<< HEAD
-                <h2>Modulo de administración</h2>
-=======
                 <h2>Modulo de administraci&oacute;n</h2>
->>>>>>> carrera
-
             </div>
         </div>
     </div>
