@@ -12,7 +12,7 @@ class Carreras extends CI_Controller
 	
 	function index()
 	{
-			
+			redirect('carreras/mostrarCarrera');
 	}
 	
 	

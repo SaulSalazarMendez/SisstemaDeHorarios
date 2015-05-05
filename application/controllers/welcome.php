@@ -3,16 +3,15 @@
 class Welcome extends CI_Controller {
 	function __construct() {
 		parent::__construct();
-		$this->load->model('Maestros');
 	}
 
 
 
 	public function index()
 	{
-		$datos=array( 'consulta' => $this->Maestros->getAll() );
-		$this->load->view('welcome_message',$datos);
+		$this->load->view('carreras/cabeza');
 		
+		$this->load->view('pie');		
 	}
 }
 
