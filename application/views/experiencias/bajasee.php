@@ -1,5 +1,5 @@
  <?php
- $connStr = 'sqlite:horarios.db';
+ $connStr = 'sqlite:db/horarios.db';
 		try{
 			$conn = new PDO($connStr);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
