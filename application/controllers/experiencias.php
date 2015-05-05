@@ -29,7 +29,7 @@ class Experiencias extends CI_Controller
 	public function eliminar(){
 		$id = $this->uri->segment(3);
 		//$connStr = 'sqlite:horarios.db';
-		$bd = new SQLite3('horarios.db');
+		$bd = new SQLite3('db/horarios.db');
 	    try{
 			//$conn = new PDO($connStr);
 			//$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -44,7 +44,7 @@ class Experiencias extends CI_Controller
 	
 	public function editar(){
 		$id = $this->uri->segment(3);
-		$connStr = 'sqlite:horarios.db';
+		$connStr = 'sqlite:db/horarios.db';
 		try{
 			$conn = new PDO($connStr);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -82,7 +82,7 @@ class Experiencias extends CI_Controller
         $creditos = $_POST['creditos'];
 		
 		try{
-			$query = new SQLite3("horarios.db");
+			$query = new SQLite3("db/horarios.db");
 			$query->exec("UPDATE ee SET nrc='".$nrc."',nombre='".$nombre."',area='".$area."',creditos='".$creditos."',seccion='".$seccion."',bloque='".$bloque."',carrera_id='".$carrera."' WHERE nrc=$nrc");
 		}catch( PDOException $Exception ) { 
 		       echo $Exception->getMessage() ."\n"; }
@@ -102,7 +102,7 @@ class Experiencias extends CI_Controller
 try{
 	//$conn = new PDO($connStr);
 	//$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$query = new SQLite3("horarios.db");
+	$query = new SQLite3("db/horarios.db");
 	$query->exec("INSERT INTO ee VALUES('".$nrc."','".$nombre."','".$area."','".$creditos."','".$seccion."','".$bloque."','".$carrera."')");
 	//$query2 = $conn->query("SELECT id, num_bloque FROM bloques");
 	//$rows = $query->fetchAll();
