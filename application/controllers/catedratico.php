@@ -168,6 +168,16 @@ class Catedratico extends CI_Controller
 		redirect('catedratico/');
 		
 		
+	}
+	public function eliminarMaestro(){
+		$id = $this->uri->segment(3);
+		if ($id==''){
+			echo 'nada';
+		}
+		else{
+			$this->Maestros->deleteTeacher($id);
+		}
 		
+		redirect('catedratico/');
 	}
 }
