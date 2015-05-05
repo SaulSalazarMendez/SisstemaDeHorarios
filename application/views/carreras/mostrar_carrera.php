@@ -14,7 +14,7 @@
                     </div>
                     	<table class="table table-bordered">	<!--Inicia tabla!-->
                     		<thead>
-								<th>N&uacute;mero de sal&oacute;n</th>
+								<th>N&uacute;mero de carrera</th>
 								<th>Nombre</th>
 								<th>Opciones</th>
 							</thead>
