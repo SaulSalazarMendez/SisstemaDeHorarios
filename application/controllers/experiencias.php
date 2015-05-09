@@ -69,7 +69,7 @@ class Experiencias extends CI_Controller
 		);
 		$this->load->view('carreras/cabeza');
 		$this->load->view('experiencias/editaree',$data);
-		//$this->load->view('carreras/footer');
+		$this->load->view('carreras/footer');
 					
 	}
 	
