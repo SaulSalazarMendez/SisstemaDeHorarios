@@ -1,8 +1,8 @@
- <div class="content-wrapper">
+ <!--  <div class="content-wrapper">	-->
       <div class="container">
         <div class="row pad-botm">
-            <div class="col-md-12">
-                <h4 class="header-line">Registro de Aulas</h4>
+            <div class="col-md-12"><br>
+                <h4 class="header-line">Registro de salones</h4>
             </div>
         </div>
              
@@ -16,7 +16,7 @@
                             <form action="<?=base_url()?>index.php/salon/guardar" method="post" accept-charset="utf-8">
                               <div class="form-group">
                                 <br>
-                                <label for="numero_salon">Número de Salon</label>
+                                <label for="numero_salon">N&uacute;mero de Salon</label>
                                 <input type="text" name="numero_salon" value="" id="numero_salon" maxlength="30" size="40" class="form-control" required />
                                 <br>
                                 <label for="capacidad_salon">Capacidad</label>
@@ -31,6 +31,6 @@
              
                     </div>  
                 </div>                 
-             </div>     
-</div>
+             </div><br>     
+<!--  </div>	-->
 

@@ -25,7 +25,7 @@ try{
       <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Registro de EE (Experiencias Educativas)</h4>
+                <h4 class="header-line">Registro de experiencias educativas</h4>
             </div>
         </div>
              
@@ -84,7 +84,7 @@ try{
                                 </select>
                                 
                                 </br>
-                                <label for="seccion">Sección</label>
+                                <label for="seccion">Secci&oacute;n</label>
 								<select id="seccion" name="seccion"     class="form-control"
                                 onchange="document.getElementById('seccion').value=this.options[this.selectedIndex].value">
                                    <option value="1">1</option>
@@ -94,7 +94,7 @@ try{
 								   <option value="5">5</option>
                                 </select>
                                 <br>
-                                <label for="creditos">Créditos</label>
+                                <label for="creditos">Cr&eacute;ditos</label>
 								<input type="number" name="creditos" value="" id="creditos" maxlength="30" size="40" class="form-control" required />
                                 </div>
                                 <br>
@@ -111,7 +111,7 @@ try{
 
 			 
  
-        <fieldset style="width:480px"    >
+        <!--  <fieldset style="width:480px"    >
             <legend>Experiencia Educativas</legend>
             <form action="" method="post">
                 <div>
@@ -123,6 +123,6 @@ try{
                 </div>
             </form>
         </fieldset>
-		 
+		-->
 </div>
 

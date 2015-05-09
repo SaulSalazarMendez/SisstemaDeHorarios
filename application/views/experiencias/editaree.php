@@ -1,3 +1,5 @@
+
+
 <?php
 $connStr = 'sqlite:db/horarios.db';
 try{
@@ -16,24 +18,25 @@ try{
       <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Edición de EE (Experiencias Educativas)</h4>
+                <h4 class="header-line">Edici&oacute;n de experiencias educativas</h4>
             </div>
         </div>
 <div class="container">
 		<div class="col-md-12">
-			<table class="table table-striped table-bordered">
+			
+			<!--  <table class="table table-striped table-bordered">
 				<thead>
 					<tr>
 						<th>NRC</th>
 						<th>Nombre</th>
 						<th>Area</th>
 						<th>Creditos</th>
-						<th>Sección</th>
+						<th>SecciÃ³n</th>
 						<th>Bloque</th>
 						<th>IDCarrera</th>
 					</tr>	
 				</thead>
-			</table>	
+			</table>	-->
 		</div>
 	</div>
 <div class="row">
@@ -44,7 +47,7 @@ try{
                     <div class="col-md-4 col-sm-3 col-xs-6">
                       <div class="alert alert-success back-widget-set text-center">
                             <form action="<?=base_url()?>index.php/experiencias/guardarEdicion" method="post" accept-charset="utf-8">
-                              <div class="form-group">
+                              <div class=class="modal-body">
 							  <br>
                                 <label for="nrc">NRC de la Experiencia Educativa</label>
                                 <input type="number" name="nrc" value="<?=$nrc?>" id="nrc" maxlength="30" size="40" class="form-control" required />
@@ -66,10 +69,10 @@ try{
                                 </div>
                                  </br>
 								 
-								 <label for="area">Area</label>
+								 <label for="area">&Aacute;rea</label>
 								<select id="area" name="area"     class="form-control"
                                 onchange="document.getElementById('seccion').value=this.options[this.selectedIndex].value">
-                                   <option value="Basica de iniciacion disciplinaria">Basica de iniciacion disciplinaria</option>
+                                   <option value="Basica de iniciacion disciplinaria">B&aacute;sica de iniciacion disciplinaria</option>
                                    <option value="Disciplinaria">Disciplinaria</option>
 								   <option value="Terminal">Terminal</option>
 								   <option value="Optativa">Optativa</option>
@@ -91,7 +94,7 @@ try{
                                 </select>
                                 
                                 </br>
-                                <label for="seccion">Sección</label>
+                                <label for="seccion">Secci&oacute;n</label>
 								<select id="seccion" name="seccion"     class="form-control"
                                 onchange="document.getElementById('seccion').value=this.options[this.selectedIndex].value">
                                    <option value="1">1</option>
@@ -101,7 +104,7 @@ try{
 								   <option value="5">5</option>
                                 </select>
                                 <br>
-                                <label for="creditos">Créditos</label>
+                                <label for="creditos">Cr&eacute;ditos</label>
 								<input type="number" name="creditos" value="<?=$creditos?>" id="creditos" maxlength="30" size="40" class="form-control" required />
 							  </div>
                                 <br>
@@ -115,3 +118,4 @@ try{
                     </div>  
                 </div>                 
              </div>
+          

@@ -22,6 +22,10 @@ body {
  background-color: rgba(0, 0, 0, 0.4);    
    
 }
+h2
+{
+	color: white;
+}
 #divSalon{
     margin-right: 10%;
     margin-left: 10%;
@@ -74,20 +78,22 @@ body {
     color:#000;
     text-decoration:none;
     font-weight:500;
-    padding: 25px 15px 25px 15px;
+    padding: 10px 15px 10px 15px;
 
 }
-.menu-section {
-    background-color: #f7f7f7;
-    border-bottom:5px solid #9170E4;
+.menu-section 
+{
+    background-color: #5CB85C;
+    /*border-bottom:5px solid #9170E4;*/
     width:100%;
 }
 .menu-top-active {
     background-color:#eeeeee;
 }
-.navbar-inverse {
-background-color: #FFF;
-border-color: rgba(155, 153, 153, 0.23);
+.navbar-inverse 
+{
+	background-color: #3399CC;
+	border-color: rgba(155, 153, 153, 0.23);
 
 }
 
@@ -224,17 +230,29 @@ height: 60px;
 /* =============================================================
    FOOTER SECTION STYLES
  ============================================================ */
-.footer-section {
-    padding:25px 50px 25px 50px;
-    color:#000;
-    font-size:13px;
-      background-color: #f7f7f7;
-      text-align:right;
-       border-top:5px solid #9170E4;
+#contenedor-general 
+{
+	width: 600px;
+	background: #FFFFFF;
+	position: relative;
+	min-height: 20%;
+	height: 20%;
 
+}    
+
+footer 
+{
+		position: relative; margin-top: -30px; /* altura en px del footer con valor negativo */ 
+		height: 30px; /* Altura del Footer en px*/ 
+		clear: both; background: #5CB85C; 
+		text-align: center; color: #FFFFFF; 
 }
 
-    .footer-section a, .footer-section a:hover {
-        color:#000;
-    }
+/*LOGO*/
 
+.logo{
+	padding-left: 5%;
+	padding-bottom: 1%;
+	width: 200px;
+	height: 80px;
+}

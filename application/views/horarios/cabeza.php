@@ -30,7 +30,7 @@
             </div>
             <img src="http://bae2008.files.wordpress.com/2012/08/horarios1.gif" class="img">
             <div class="right-div">
-                <a href="#" class="btn btn-danger pull-right">Cerrar Sesión</a>
+                <a href="#" class="btn btn-danger pull-right">Cerrar SesiÃ³n</a>
             </div>
         </div>
     </div>

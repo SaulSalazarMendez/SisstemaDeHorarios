@@ -9,24 +9,21 @@
 		}catch( PDOException $Exception ) { 
 		       echo $Exception->getMessage() ."\n"; }
  ?>
- <div class="content-wrapper">
       <div class="container">
         <div class="row pad-botm">
-            <div class="col-md-12">
-                <h4 class="header-line">Baja de EE (Experiencias Educativas)</h4>
+            <div class="col-md-12"><br>
+                <h4 class="header-line">Registro de experiencias educativas</h4>
             </div>
-        </div>
-
-		<div class="container">
-		<div class="col-md-12">
-			<table class="table table-striped table-bordered">
-				<thead>
+        </div> 
+			<div id="scrollVertical">
+			<table class="table table-striped table-bordered table-hover">
+				<thead id="thead">
 					<tr>
 						<th>NRC</th>
 						<th>Nombre</th>
 						<th>Area</th>
 						<th>Creditos</th>
-						<th>Sección</th>
+						<th>Secci&oacute;n</th>
 						<th>Bloque</th>
 						<th>IDCarrera</th>
 						<th>Editar/Eliminar</th>
@@ -45,15 +42,15 @@
 								echo "<td>".$row['bloque']."</td>";
 								echo "<td>".$row['carrera_id']."</td>";
 								echo "<td>";
-									echo "<a href='".base_url()."index.php/experiencias/editar/".$row['nrc']."' class='label label-info'><span class='glyphicon glyphicon-pencil'></a></span>";
+									echo "<a href='".base_url()."index.php/experiencias/editar/".$row['nrc']."' class='btn btn-info'><span class='glyphicon glyphicon-edit'></a></span>";
 									echo "&nbsp;&nbsp;";
-									echo "<a href='".base_url()."index.php/experiencias/eliminar/".$row['nrc']."' class='label label-danger'>";
-										echo "<span class='glyphicon glyphicon-minus'></a></span>";
+									echo "<a href='".base_url()."index.php/experiencias/eliminar/".$row['nrc']."' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a>";
+										
 								echo "</tr>";
 						}	
 					}
 				?>
 				</tbody>
-			</table>	
+			</table>
 		</div>
 	</div>

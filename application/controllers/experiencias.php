@@ -6,21 +6,22 @@ class Experiencias extends CI_Controller
 	{
 		parent::__construct();
 
-		
 	}
 
 	function index()
 	{
-
 		
 	}
-	function registroExperiencias(){
+	
+	function registroExperiencias()
+	{
 		$this->load->view('carreras/cabeza');
 		$this->load->view('experiencias/contenido');
 		$this->load->view('carreras/footer');
 	}
 	
-	function bajaExperiencias(){	
+	function bajaExperiencias()
+	{	
 		$this->load->view('carreras/cabeza');
 		$this->load->view('experiencias/bajasee');
 		$this->load->view('carreras/footer');
@@ -68,7 +69,7 @@ class Experiencias extends CI_Controller
 		);
 		$this->load->view('carreras/cabeza');
 		$this->load->view('experiencias/editaree',$data);
-		$this->load->view('carreras/footer');
+		//$this->load->view('carreras/footer');
 					
 	}
 	

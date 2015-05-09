@@ -24,13 +24,23 @@
 <body>
     <div class="navbar navbar-inverse set-radius-zero" >
         <div class="container">
+        
+        
+        
             <div class="navbar-header">
+            
+             <div >
+    			<a href="<?php echo base_url();?>index.php" >
+    				<img src="<?=base_url()?>img/uvLogo.png" class="logo">
+				</a>
+			</div>
+            
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h2>Modulo de administraci&oacute;n</h2>
+                <h2>Sistema de control de horarios FEI</h2>
             </div>
         </div>
     </div>
@@ -41,35 +51,35 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="<?=base_url()?>" class="menu-top">Inicio</a></li>
+                            <li><a href="<?=base_url()?>" class="menu-top"><span class="glyphicon glyphicon-home"></span>&nbsp;Inicio</a></li>
                            
                             
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Carreras <i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" role="menu active" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/altaCarreras">Registro</a></li>
-                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/mostrarCarrera">Mostrar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/altaCarreras"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/mostrarCarrera"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Catedraticos <i class="glyphicon glyphicon-chevron-down"></i></a>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Catedr&aacute;ticos <i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/catedratico/nuevoMaestro">Agregar</a></li>
-                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/catedratico/">Mostrar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/catedratico/nuevoMaestro"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/catedratico/"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Experiencias Educativas <i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/experiencias/registroExperiencias">Registro</a></li>
-                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/experiencias/bajaExperiencias">Mostrar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/experiencias/registroExperiencias"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/experiencias/bajaExperiencias"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Salones<i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">                                    
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/registrarSalon">Registro</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/">Mostrar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/registrarSalon"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
                                 </ul>
                             </li>
                         </ul>

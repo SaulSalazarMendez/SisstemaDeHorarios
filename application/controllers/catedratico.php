@@ -12,9 +12,9 @@ class Catedratico extends CI_Controller
 	
 	function  algo(){
 	  	$datos=array(  'consulta' => $this->Maestros->getAll() );
-		$this->load->view('carreras/cabeza');
+	  	$this->load->view('carreras/cabeza');
 		$this->load->view('catedraticos/contenido',$datos);
-		$this->load->view('pie');
+		$this->load->view('carreras/footer');
 	
 	}
 
@@ -23,7 +23,7 @@ class Catedratico extends CI_Controller
 		$datos=array(  'consulta' => $this->Maestros->getAll() );
 		$this->load->view('carreras/cabeza');
 		$this->load->view('catedraticos/verMaestros',$datos);
-		$this->load->view('pie');
+		$this->load->view('carreras/footer');
 		
 	}
 	public function nuevoMaestro(){
@@ -33,7 +33,7 @@ class Catedratico extends CI_Controller
 		
 		$this->load->view('carreras/cabeza');
 		$this->load->view('catedraticos/verMaestro',$datos);
-		$this->load->view('pie');
+		$this->load->view('carreras/footer');
 		
 	}
 	public function editarMaestro(){

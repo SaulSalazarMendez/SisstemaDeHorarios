@@ -1,8 +1,9 @@
- <div class="content-wrapper">
+
+<div class="content-wrapper">
       <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Registro de Catedráticos</h4>
+                <h4 class="header-line">Registro de CatedrÃ¡ticos</h4>
             </div>
         </div> 
              
@@ -16,7 +17,7 @@
                             <form action="#" method="post" accept-charset="utf-8">
                               <div class="form-group">
                                 <br>
-                                <label for="numero_de_personal">Número de personal</label>
+                                <label for="numero_de_personal">NÃºmero de personal</label>
                                 <input type="number" name="numero_personal" value="" id="numero_personal" maxlength="30" size="40" class="form-control" required />
                                 <br>
                                 <label for="nombre">Nombre (s)</label>
@@ -34,7 +35,7 @@
                                 <select id="cmbMake" name="Make"     class="form-control"
                                 onchange="document.getElementById('materias_que_imparte').value=this.options[this.selectedIndex].value">
                                    <option value="algebra">Algebra</option>
-                                   <option value="administracion">Administración</option>
+                                   <option value="administracion">AdministraciÃ³n</option>
                                 </select>
                                 </div>
                                 </div>

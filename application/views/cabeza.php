@@ -21,24 +21,27 @@
 </head>
 <body>
     <div class="navbar navbar-inverse set-radius-zero" >
+     
         <div class="container">
             <div class="navbar-header">
+           		
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h2>Modulo de administraciÃ³n</h2>
+                <h2>Modulo de administraci&oacute;n</h2>
 
             </div>
 
             <div class="right-div">
-                <a href="#" class="btn btn-danger pull-right">Cerrar SesiÃ³n</a>
+                <a href="#" class="btn btn-danger pull-right">Cerrar Sesi&oacute;n</a>
             </div>
         </div>
     </div>
     <!-- LOGO HEADER END-->
     <section class="menu-section">
+   
         <div class="container">
             <div class="row ">
                 <div class="col-md-12">
