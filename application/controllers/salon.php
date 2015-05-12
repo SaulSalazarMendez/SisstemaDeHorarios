@@ -59,6 +59,16 @@ class Salon extends CI_Controller
 		$this->Modelo_salon->eliminarSalon($id);
 		redirect('salon/');
 	}
+	function detalleEE(){
+		$this->load->view('carreras/cabeza');
+		$this->load->view('horarios/detalleExperiencia');
+		$this->load->view('pie');
+	}
+	function generarHorario(){
+		$this->load->view('carreras/cabeza');
+		$this->load->view('horarios/generar');
+		$this->load->view('pie');
+	}
 	
 	
 }

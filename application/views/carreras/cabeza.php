@@ -15,8 +15,13 @@
     <link href="<?=base_url()?>CSS/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="<?=base_url()?>CSS/style.css" rel="stylesheet" />
+    <link href="<?=base_url()?>js/js_horarios/style.css" rel="stylesheet" />
     <link href="<?=base_url()?>CSS/bootstrap-modal.css" rel="stylesheet" />
     <link href="<?=base_url()?>CSS/bootstrap-modal-bs3patch.css" rel="stylesheet" />
+    <script src="<?=base_url()?>js/js_horarios/header.js"></script>
+    <script src="<?=base_url()?>js/js_horarios/redips-drag-min.js"></script>
+    <script src="<?=base_url()?>js/js_horarios/redips-drag-source.js"></script>
+    <script src="<?=base_url()?>js/js_horarios/script.js"></script>
     <!-- GOOGLE FONT -->
     <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
 
@@ -70,6 +75,13 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">                                    
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/registrarSalon">Registro</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/">Mostrar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Horarios<i class="glyphicon glyphicon-chevron-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">                                    
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/detalleEE">EE</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/generarHorario">Generar Horario</a></li>
                                 </ul>
                             </li>
                         </ul>
