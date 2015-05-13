@@ -10,7 +10,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('carreras/cabeza');
-		
+		$this->load->view('pagina_inicio');
 		$this->load->view('pie');		
 	}
 }

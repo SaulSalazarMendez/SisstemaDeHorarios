@@ -15,38 +15,39 @@
     <link href="<?=base_url()?>CSS/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="<?=base_url()?>CSS/style.css" rel="stylesheet" />
+    <link href="<?=base_url()?>js/js_horarios/style.css" rel="stylesheet" />
     <link href="<?=base_url()?>CSS/bootstrap-modal.css" rel="stylesheet" />
     <link href="<?=base_url()?>CSS/bootstrap-modal-bs3patch.css" rel="stylesheet" />
+    <link href="<?=base_url()?>CSS/estiloInicio.css" rel="stylesheet" />
+    <script src="<?=base_url()?>js/js_horarios/header.js"></script>
+    <script src="<?=base_url()?>js/js_horarios/redips-drag-min.js"></script>
+    <script src="<?=base_url()?>js/js_horarios/redips-drag-source.js"></script>
+    <script src="<?=base_url()?>js/js_horarios/script.js"></script>
+    <script src="<?=base_url()?>js/valida.js" type="java/script"></script>
     <!-- GOOGLE FONT -->
     <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
 
 </head>
 <body>
-    <div class="navbar navbar-inverse set-radius-zero" >
-        <div class="container">
-        
-        
-        
-            <div class="navbar-header">
-            
-             <div >
-    			<a href="<?php echo base_url();?>index.php" >
-    				<img src="<?=base_url()?>img/uvLogo.png" class="logo">
-				</a>
-			</div>
-            
+    <div class="navbar navbar-inverse set-radius-zero">
+        <div class="container"> 
+            <div class="navbar-header">  
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h2>Sistema de control de horarios FEI</h2>
             </div>
         </div>
     </div>
     <!-- LOGO HEADER END-->
     <section class="menu-section">
         <div class="container">
+        <div class="uv" >
+         <a href="<?php echo base_url();?>index.php" >
+            <img src="<?=base_url()?>img/uvLogo.png" class="logo">
+         </a>
+        </div>
             <div class="row ">
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
@@ -80,6 +81,13 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">                                    
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/registrarSalon"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Horarios<i class="glyphicon glyphicon-chevron-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">                                    
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/detalleEE">EE</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/generarHorario">Generar Horario</a></li>
                                 </ul>
                             </li>
                         </ul>
