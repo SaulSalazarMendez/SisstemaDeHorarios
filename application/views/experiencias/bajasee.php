@@ -3,7 +3,7 @@
 		try{
 			$conn = new PDO($connStr);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$query = $conn->query("SELECT nrc, nombre, area, creditos, seccion, bloque, carrera_id FROM ee");
+			$query = $conn->query("SELECT nrc, nombre, area, creditos, carrera_id FROM ee");
 			$rows = $query->fetchAll();
 			
 		}catch( PDOException $Exception ) { 
@@ -23,8 +23,6 @@
 						<th>Nombre</th>
 						<th>Area</th>
 						<th>Creditos</th>
-						<th>Secci&oacute;n</th>
-						<th>Bloque</th>
 						<th>IDCarrera</th>
 						<th>Editar/Eliminar</th>
 					</tr>	
@@ -38,8 +36,6 @@
 								echo "<td>".$row['nombre']."</td>";
 								echo "<td>".$row['area']."</td>";
 								echo "<td>".$row['creditos']."</td>";
-								echo "<td>".$row['seccion']."</td>";
-								echo "<td>".$row['bloque']."</td>";
 								echo "<td>".$row['carrera_id']."</td>";
 								echo "<td>";
 									echo "<a href='".base_url()."index.php/experiencias/editar/".$row['nrc']."' class='btn btn-info'><span class='glyphicon glyphicon-edit'></a></span>";

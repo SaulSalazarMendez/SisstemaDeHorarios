@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Experiencias extends CI_Controller
+class Cursos extends CI_Controller
 {
 	function __construct()
 	{
@@ -13,17 +13,17 @@ class Experiencias extends CI_Controller
 		
 	}
 	
-	function registroExperiencias()
+	function registroCursos()
 	{
 		$this->load->view('carreras/cabeza');
-		$this->load->view('experiencias/contenido');
+		$this->load->view('cursos/contenido');
 		$this->load->view('carreras/footer');
 	}
 	
-	function bajaExperiencias()
+	function mostrarCursos()
 	{	
 		$this->load->view('carreras/cabeza');
-		$this->load->view('experiencias/bajasee');
+		$this->load->view('cursos/mostrar');
 		$this->load->view('carreras/footer');
 	}
 	
@@ -36,11 +36,11 @@ class Experiencias extends CI_Controller
 			//$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//$query = $conn->query("DELETE FROM ee WHERE nrc='.$id.'");
 			//$rows = $query->fetchAll();
-			$bd->exec('DELETE FROM ee WHERE nrc='.$id.'');
+			$bd->exec('DELETE FROM curso WHERE id='.$id.'');
 			
 		}catch( PDOException $Exception ) { 
 		       echo $Exception->getMessage() ."\n"; }
-	    redirect('experiencias/bajaExperiencias');
+	    redirect('cursos/mostrarCursos');
 	}
 	
 	public function editar(){
@@ -49,7 +49,7 @@ class Experiencias extends CI_Controller
 		try{
 			$conn = new PDO($connStr);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$query = $conn->query("SELECT nombre, creditos FROM ee WHERE nrc=$id");
+			$query = $conn->query("SELECT fecha_inicio, fecha_fin, horas FROM curso WHERE id=$id");
 			$rows = $query->fetchAll();
 			//$bd->exec('DELETE FROM ee WHERE nrc='.$id.'');
 			
@@ -57,54 +57,64 @@ class Experiencias extends CI_Controller
 		       echo $Exception->getMessage() ."\n"; }
 			   
 	    foreach ($rows as $row){
-            $nombre = $row['nombre'];
-            $creditos = $row['creditos'];			
+            $fecha_inicio = $row['fecha_inicio'];
+            $fecha_fin = $row['fecha_fin'];
+			$horas = $row['horas'];	
 		}
 		
 		//$nombre = $rows['nombre'];
 		$data = array(
-	           'nrc' => $id,
-		       'nombre' => $nombre,
-			   'creditos' => $creditos
+	           'id' => $id,
+		       'fecha_inicio' => $fecha_inicio,
+			   'fecha_fin' => $fecha_fin,
+			   'horas' => $horas
 		);
 		$this->load->view('carreras/cabeza');
-		$this->load->view('experiencias/editaree',$data);
+		$this->load->view('cursos/editar',$data);
 		$this->load->view('carreras/footer');
 					
 	}
 	
 	public function guardarEdicion(){
-		$nrc = $_POST['nrc'];
-        $nombre = $_POST['nombre'];
-        $carrera = $_POST['carrera'];
-        $area = $_POST['area'];
-        $creditos = $_POST['creditos'];
+		$id = $_POST['id'];
+   $fecha_inicio = $_POST['fechai'];
+   $fecha_fin = $_POST['fechaf'];
+   $ee_id = $_POST['nombree'];
+   $maestro_id = $_POST['nombrem'];
+   $num_salon = $_POST['nums'];
+   $horas = $_POST['horas'];
+   $bloque = $_POST['bloque'];
+   $seccion = $_POST['seccion'];
 		
 		try{
 			$query = new SQLite3("db/horarios.db");
-			$query->exec("UPDATE ee SET nrc='".$nrc."',nombre='".$nombre."',area='".$area."',creditos='".$creditos."',carrera_id='".$carrera."' WHERE nrc=$nrc");
+			$query->exec("UPDATE curso SET id='".$id."',fecha_inicio='".$fecha_inicio."',fecha_fin='".$fecha_fin."',ee_id='".$ee_id."',maestro_id='".$maestro_id."',num_salon='".$num_salon."',horas='".$horas."',bloque='".$bloque."',seccion='".$seccion."' WHERE id=$id");
 		}catch( PDOException $Exception ) { 
 		       echo $Exception->getMessage() ."\n"; }
-	    redirect('experiencias/bajaExperiencias');
+	    redirect('cursos/mostrarCursos');
 	}
 	
 	function guardar(){
-		$nrc = $_POST['nrc'];
-   $nombre = $_POST['nombre'];
-   $carrera = $_POST['carrera'];
-   $area = $_POST['area'];
-   $creditos = $_POST['creditos'];
+   $id = $_POST['id'];
+   $fecha_inicio = $_POST['fechai'];
+   $fecha_fin = $_POST['fechaf'];
+   $ee_id = $_POST['nombree'];
+   $maestro_id = $_POST['nombrem'];
+   $num_salon = $_POST['nums'];
+   $horas = $_POST['horas'];
+   $bloque = $_POST['bloque'];
+   $seccion = $_POST['seccion'];
 		
 //$connStr = 'sqlite:horarios.db';
 try{
 	//$conn = new PDO($connStr);
 	//$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$query = new SQLite3("db/horarios.db");
-	$query->exec("INSERT INTO ee VALUES('".$nrc."','".$nombre."','".$area."','".$creditos."','".$carrera."')");
+	$query->exec("INSERT INTO curso VALUES('".$id."','".$maestro_id."','".$ee_id."','".$fecha_inicio."','".$fecha_fin."','".$num_salon."','".$horas."','".$bloque."','".$seccion."')");
 	//$query2 = $conn->query("SELECT id, num_bloque FROM bloques");
 	//$rows = $query->fetchAll();
 	//$rowsb = $query2->fetchAll();
-	redirect('experiencias/registroExperiencias');
+	redirect('cursos/registroCursos');
 }catch( PDOException $Exception ) { 
 		echo $Exception->getMessage() ."\n"; }
 	}

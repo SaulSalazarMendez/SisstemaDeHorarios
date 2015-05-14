@@ -78,32 +78,7 @@ try{
 								   <option value="Optativa">Optativa</option>
                                 </select>
 								 </br>
-								 <label for="bloque">Bloque</label>
-								<select id="bloque" name="bloque"     class="form-control"
-                                onchange="document.getElementById('seccion').value=this.options[this.selectedIndex].value">
-                                   <option value="1">1</option>
-                                   <option value="2">2</option>
-								   <option value="3">3</option>
-								   <option value="4">4</option>
-								   <option value="5">5</option>
-                                   <option value="6">6</option>
-								   <option value="7">7</option>
-								   <option value="8">8</option>
-								   <option value="9">9</option>
-								   <option value="10">10</option>
-                                </select>
-                                
-                                </br>
-                                <label for="seccion">Secci&oacute;n</label>
-								<select id="seccion" name="seccion"     class="form-control"
-                                onchange="document.getElementById('seccion').value=this.options[this.selectedIndex].value">
-                                   <option value="1">1</option>
-                                   <option value="2">2</option>
-								   <option value="3">3</option>
-								   <option value="4">4</option>
-								   <option value="5">5</option>
-                                </select>
-                                <br>
+								 
                                 <label for="creditos">Cr&eacute;ditos</label>
 								<input type="number" name="creditos" value="<?=$creditos?>" id="creditos" maxlength="30" size="40" class="form-control" required />
 							  </div>

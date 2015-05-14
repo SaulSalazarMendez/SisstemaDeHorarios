@@ -90,6 +90,13 @@
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/generarHorario">Generar Horario</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Cursos<i class="glyphicon glyphicon-chevron-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">                                    
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/cursos/registroCursos"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/cursos/mostrarCursos"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
