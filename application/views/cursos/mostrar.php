@@ -3,7 +3,7 @@
 		try{
 			$conn = new PDO($connStr);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$query = $conn->query("SELECT id, fecha_inicio, fecha_fin, ee_id, maestro_id, num_salon, horas, bloque, seccion FROM curso");
+			$query = $conn->query("SELECT id, maestro_id, ee_nrc, fecha_ini, fecha_fin, bloque, seccion, horas, horas_dadas FROM curso");
 			$rows = $query->fetchAll();
 			
 		}catch( PDOException $Exception ) { 
@@ -20,14 +20,14 @@
 				<thead id="thead">
 					<tr>
 						<th>ID</th>
-						<th>FechaInicio</th>
-						<th>FechaFin</th>
-						<th>EE</th>
 						<th>Maestro</th>
-						<th>Salón</th>
-						<th>Horas</th>
+						<th>EE</th>
+						<th>FechaInicion</th>
+						<th>FechaFin</th>
 						<th>Bloque</th>
 						<th>Seccion</th>
+						<th>Horas</th>
+						<th>HorasDadas</th>
 						<th>Editar/Eliminar</th>
 					</tr>	
 				</thead>
@@ -37,14 +37,14 @@
 						foreach ($rows as $row){
 							echo "<tr>";
 								echo "<td>".$row['id']."</td>";
-								echo "<td>".$row['fecha_inicio']."</td>";
-								echo "<td>".$row['fecha_fin']."</td>";
-								echo "<td>".$row['ee_id']."</td>";
 								echo "<td>".$row['maestro_id']."</td>";
-								echo "<td>".$row['num_salon']."</td>";
-								echo "<td>".$row['horas']."</td>";
+								echo "<td>".$row['ee_nrc']."</td>";
+								echo "<td>".$row['fecha_ini']."</td>";
+								echo "<td>".$row['fecha_fin']."</td>";
 								echo "<td>".$row['bloque']."</td>";
 								echo "<td>".$row['seccion']."</td>";
+								echo "<td>".$row['horas']."</td>";
+								echo "<td>".$row['horas_dadas']."</td>";
 								echo "<td>";
 									echo "<a href='".base_url()."index.php/cursos/editar/".$row['id']."' class='btn btn-info'><span class='glyphicon glyphicon-edit'></a></span>";
 									echo "&nbsp;&nbsp;";

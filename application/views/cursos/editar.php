@@ -39,9 +39,8 @@ try{
                             <form action="<?=base_url()?>index.php/cursos/guardarEdicion" method="post" accept-charset="utf-8">
                               <div class="form-group">
 							  <br>
-                                <label for="nrc">ID</label>
-                                <input type="number" name="id" value="<?=$id?>" id="id" maxlength="30" size="40" class="form-control" required />
-                                </br>
+                                <input type="hidden" name="id" value="<?=$id?>" id="id" maxlength="30" size="40" class="form-control" required />
+								
 								<label for="nrc">Fecha Inicio</label>
 								<input class="form-control" name="fechai" type="date" required />
 								</br>
@@ -62,13 +61,7 @@ try{
                         }?>
                     </select>
                                 </br>
-								<label for="nrc">Numero Salon</label></br>
-                                <select name="nums" class="form-control">
-                        <?php foreach ($rows3 as $row) {
-                            echo '<option value="'.$row['num_salon'].'">'.$row['num_salon'].'</option>';
-                        }?>
-                    </select>
-                                </br>
+								
 								<label for="bloque">Bloque</label>
 								<select id="bloque" name="bloque"     class="form-control"
                                 onchange="document.getElementById('seccion').value=this.options[this.selectedIndex].value">

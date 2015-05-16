@@ -1,11 +1,13 @@
 
-
+<form action="<?=base_url()?>index.php/pdfs/generarInf" method="post" accept-charset="utf-8">
 	<div class="container">
 	<div class="row pad-botm">
             <div class="col-md-12"><br>
                 <h4 class="header-line">Registro de catedr&aacute;ticos</h4>
-            </div>
+            <input type="submit" name="informe" value="Generar Informe" class="btn btn-success" />
+			</div>
         </div>
+</form>
 	  <!-- Default panel contents -->
 	  
 	<div class="row">
@@ -27,7 +29,8 @@
 		<td><?=$maestro['apellidos']?></td>
 		<td><?=$maestro['matricula']?></td>
 		<td><a href='<?=base_url()?>index.php/catedratico/editarMaestro/<?=$maestro['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-edit'></i></a> 
-		<a href='<?=base_url()?>index.php/catedratico/eliminarMaestro/<?=$maestro['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a></td>
+		<a href='<?=base_url()?>index.php/catedratico/eliminarMaestro/<?=$maestro['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a>
+		<a href='<?=base_url()?>index.php/pdfs/generar/<?=$maestro['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-trash'></i></a></td>
 		</tr>
 	
 	<?php
