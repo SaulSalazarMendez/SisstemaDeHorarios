@@ -15,7 +15,7 @@
                               <div class="form-group">
                                 <br>
                                 <label for="licenciatura">Nombre de la licenciatura</label><br><br>
-                                <input type="text" name="txtNombreCarrera" value="" id="txtNombreCarrera" maxlength="30" size="40" class="form-control"  onkeypress="letras()" />
+                                <input type="text" name="txtNombreCarrera" value="" id="txtNombreCarrera" maxlength="30" size="40" class="form-control"  onkeypress="letras()" required="required"/>
                               </div>
                                 <br>
                                 <input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar" class="btn btn-success" />
