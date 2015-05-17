@@ -41,10 +41,10 @@ try{
 							  <br>
                                 
 								<label for="nrc">Fecha Inicio</label>
-								<input class="form-control" name="fechai" type="date" required />
+								<input class="form-control" name="fechai" type="date" required onkeypress="ValidaNumeros();"/>
 								</br>
 								<label for="nrc">Fecha Fin</label>
-								<input class="form-control" name="fechaf" type="date" required />
+								<input class="form-control" name="fechaf" type="date" required onkeypress="ValidaNumeros();"/>
 								</br>
 								<label for="nrc">Nombre EE</label></br>
                                 <select name="nombree" class="form-control">
@@ -90,7 +90,7 @@ try{
                                 <br>
 								
 								<label for="nrc">Horas</label>
-                                <input type="number" name="horas" value="" id="horas" maxlength="30" size="40" class="form-control" required />
+                                <input type="number" name="horas" value="" id="horas" maxlength="30" size="40" class="form-control" required onkeypress="ValidaNumeros();"/>
                                 </br>
 					
                                 <input type="submit" name="register" value="Registrar" class="btn btn-success" />

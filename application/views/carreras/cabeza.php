@@ -23,7 +23,7 @@
     <script src="<?=base_url()?>js/js_horarios/redips-drag-min.js"></script>
     <script src="<?=base_url()?>js/js_horarios/redips-drag-source.js"></script>
     <script src="<?=base_url()?>js/js_horarios/script.js"></script>
-    <script src="<?=base_url()?>js/valida.js" type="java/script"></script>
+    <script src="<?=base_url()?>js/valida.js"></script>
     <!-- GOOGLE FONT -->
     <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
 

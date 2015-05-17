@@ -17,28 +17,27 @@
     <link href="<?=base_url()?>CSS/style1.css" rel="stylesheet" />
     <link href="<?=base_url()?>CSS/bootstrap-modal.css" rel="stylesheet" />
     <link href="<?=base_url()?>CSS/bootstrap-modal-bs3patch.css" rel="stylesheet" />
+    <script src="<?=base_url()?>js/valida.js"></script>
 <body>
     <div class="navbar navbar-inverse set-radius-zero" >
         <div class="container">
             <div class="navbar-header">
-            	<div >
-    				<a href="<?php echo base_url();?>index.php" >
-    					<img src="<?=base_url()?>img/uvLogo.png" class="logo">
-					</a>
-				</div>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               <h2>Sistema de control de horarios FEI</h2>
-
             </div>
         </div>
     </div>
     <!-- LOGO HEADER END-->
     <section class="menu-section">
         <div class="container">
+        	<!--  <div class="uv" >
+         		<a href="<?php echo base_url();?>index.php" >
+           			 <img src="<?=base_url()?>img/uvLogo.png" class="logo">
+        		</a>
+        	</div>	-->
             <div class="row ">
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
@@ -50,14 +49,14 @@
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Carreras <i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/altaCarreras"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
-                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/bajaCarreras"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/carreras/mostrarCarrera"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Catedraticos <i class="glyphicon glyphicon-chevron-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/catedratico/registroCatedratico"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
-                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/catedratico/bajaCatedratico"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/catedratico/nuevoMaestro"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/catedratico/"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -72,6 +71,20 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/registrarSalon"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Horarios<i class="glyphicon glyphicon-chevron-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">                                    
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/detalleEE">EE</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/salon/generarHorario">Generar Horario</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Cursos<i class="glyphicon glyphicon-chevron-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">                                    
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/cursos/registroCursos"><span class="glyphicon glyphicon-book">&nbsp;</span>Agregar</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="<?=base_url()?>index.php/cursos/mostrarCursos"><span class="glyphicon glyphicon-folder-open">&nbsp;</span>Mostrar</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -97,9 +110,9 @@
           </div>
         <div class="modal-body">
           <h4>Numero de Salon</h4>
-          <input type="text" name="numero_salon" value="<?=$consulta['num_salon']?>" id="numero_salon" maxlength="30" size="40" class="form-control" required />
+          <input type="text" name="numero_salon" value="<?=$consulta['num_salon']?>" id="numero_salon" maxlength="30" size="40" class="form-control" required onkeypress="ValidaNumeros();" />
           <h4>Capacidad</h4>
-          <input type="number" name="capacidad_salon" value="<?=$consulta['capacidad']?>" id="capacidad_salon" maxlength="30" size="40" class="form-control" required />
+          <input type="number" name="capacidad_salon" value="<?=$consulta['capacidad']?>" id="capacidad_salon" maxlength="30" size="40" class="form-control" required onkeypress="ValidaNumeros();" />
           <input name='id' value='<?=$consulta['id']?>' hidden>
           <p></p>
         </div>

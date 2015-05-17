@@ -17,7 +17,7 @@
 			<th>Nombre</th>
 			<th>Apellidos</th>
 			<th>Matricula</th>
-			<th>Editar/Eliminar</th>
+			<th>Editar/Eliminar/Reporte</th>
 			</thead>
 	<?php 
 	if ($consulta!=false){
@@ -30,7 +30,7 @@
 		<td><?=$maestro['matricula']?></td>
 		<td><a href='<?=base_url()?>index.php/catedratico/editarMaestro/<?=$maestro['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-edit'></i></a> 
 		<a href='<?=base_url()?>index.php/catedratico/eliminarMaestro/<?=$maestro['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a>
-		<a href='<?=base_url()?>index.php/pdfs/generar/<?=$maestro['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-trash'></i></a></td>
+		<a href='<?=base_url()?>index.php/pdfs/generar/<?=$maestro['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-list-alt'></i></a></td>
 		</tr>
 	
 	<?php

@@ -90,7 +90,7 @@ try{
                                 <br>
 								
 								<label for="nrc">Horas</label>
-                                <input type="number" name="horas" value="<?=$horas?>" id="horas" maxlength="30" size="40" class="form-control" required />
+                                <input type="number" name="horas" value="<?=$horas?>" id="horas" maxlength="30" size="40" class="form-control" required onkeypress="ValidaNumeros();"/>
                                 </br>
 					
                                 <input type="submit" name="register" value="Registrar" class="btn btn-success" />

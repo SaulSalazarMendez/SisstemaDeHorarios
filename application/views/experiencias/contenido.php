@@ -40,11 +40,11 @@ try{
                               <div class="form-group">
 							  <br>
                                 <label for="nrc">NRC de la Experiencia Educativa</label>
-                                <input type="number" name="nrc" value="" id="nrc" maxlength="30" size="40" class="form-control" required />
+                                <input type="number" name="nrc" value="" id="nrc" maxlength="30" size="40" class="form-control" required onkeypress="ValidaNumeros();"/>
                                 </br>
 								
 								<label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" value="" id="nombre" maxlength="50" size="40" class="form-control" required />
+                                <input type="text" name="nombre" value="" id="nombre" maxlength="50" size="40" class="form-control" required onkeypress="letras();"/>
                                 </br>
 								
 								<div class="form-group">
@@ -70,7 +70,7 @@ try{
 								 </br>
 								 
                                 <label for="creditos">Cr&eacute;ditos</label>
-								<input type="number" name="creditos" value="" id="creditos" maxlength="30" size="40" class="form-control" required />
+								<input type="number" name="creditos" value="" id="creditos" maxlength="30" size="40" class="form-control" required onkeypress="ValidaNumeros();"/>
                                 </div>
                                 <br>
                                 <input type="submit" name="register" value="Registrar" class="btn btn-success" />

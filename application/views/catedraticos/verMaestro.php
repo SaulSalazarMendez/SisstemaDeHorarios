@@ -29,15 +29,15 @@
 	<div class="control-group">
 		<div class="form-group">
 			<label>Nombre</label>
-			<input type="text" name='nombre' class="form-control" placeholder="Nombre" aria-describedby="sizing-addon1" value='<?=$consulta['nombre']?>' required>
+			<input type="text" name='nombre' class="form-control" placeholder="Nombre" aria-describedby="sizing-addon1" value='<?=$consulta['nombre']?>'  onkeypress="letras();" required >
 		</div>
 		<div class="form-group">
 			<label>Apellidos</label>
-			<input type="text" name='apellidos' class="form-control" placeholder="Apellido" aria-describedby="sizing-addon1" value='<?=$consulta['apellidos']?>' required>
+			<input type="text" name='apellidos' class="form-control" placeholder="Apellido" aria-describedby="sizing-addon1" value='<?=$consulta['apellidos']?>' required onkeypress="letras();">
 		</div>
 		<div class="form-group">
 			<label>Matricula</label>
-			<input type="text" name='matricula' class="form-control" placeholder="Matricula" aria-describedby="sizing-addon1" value='<?=$consulta['matricula']?>' required>
+			<input type="text" name='matricula' class="form-control" placeholder="Matricula" aria-describedby="sizing-addon1" value='<?=$consulta['matricula']?>' required onkeypress="ValidaNumeros();" >
 		</div>
 		<div class="form-group">
 			<label>Modificar Calendario</label>
@@ -56,15 +56,15 @@
 	<div class="control-group">
 		<div class="form-group">
 			<label>Nombre</label>
-			<input type="text" name='nombre' class="form-control" placeholder="Nombre" aria-describedby="sizing-addon1" value='' required>
+			<input type="text" name='nombre' class="form-control" placeholder="Nombre" aria-describedby="sizing-addon1" value='' required onkeypress="letras();" >
 		</div>
 		<div class="form-group">
 			<label>Apellido</label>
-			<input type="text" name='apellidos' class="form-control" placeholder="Apellido" aria-describedby="sizing-addon1" value='' required>
+			<input type="text" name='apellidos' class="form-control" placeholder="Apellido" aria-describedby="sizing-addon1" value='' required onkeypress="letras();" >
 		</div>
 		<div class="form-group">
 			<label>Matricula</label>
-			<input type="text" name='matricula' class="form-control" placeholder="Matricula" aria-describedby="sizing-addon1" value='' required>
+			<input type="text" name='matricula' class="form-control" placeholder="Matricula" aria-describedby="sizing-addon1" value='' required onkeypress="ValidaNumeros();">
 		</div>
 		<div class="form-group">
 			<label>Modificar</label>
