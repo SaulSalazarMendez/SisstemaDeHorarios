@@ -11,7 +11,7 @@
 		<thead id="thead">
 			<th>N&uacute;mero de Salon</th>
 			<th>Capacidad</th>
-			<th>Editar/Eliminar</th>
+			<th>Editar / Eliminar</th>
 			
 			</thead>
 		
@@ -26,7 +26,7 @@
 				<td><?=$row['capacidad']?></td><!--		<td><a href='<?=base_url()?>index.php/salon/editarSalon/<?=$row['id']?>' class='btn btn-warning'><i class='glyphicon glyphicon-edit'></i></a> 
 		-->
 				<td><a href='<?=base_url()?>index.php/salon/editarSalon/<?=$row['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-edit'></i></a>
-				<a href='<?=base_url()?>index.php/salon/eliminarSalon/<?=$row['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a></td>
+				&nbsp;&nbsp;&nbsp;&nbsp;<a href='<?=base_url()?>index.php/salon/eliminarSalon/<?=$row['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a></td>
 				</tr>
 			
 			<?php

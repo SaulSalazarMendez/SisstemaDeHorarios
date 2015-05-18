@@ -1,10 +1,10 @@
 
-<form action="<?=base_url()?>index.php/pdfs/generarInf" method="post" accept-charset="utf-8">
+<form action="<?=base_url()?>index.php/pdfs/generarInf" method="post" accept-charset="utf-8" target="_blank">
 	<div class="container">
 	<div class="row pad-botm">
             <div class="col-md-12"><br>
                 <h4 class="header-line">Registro de catedr&aacute;ticos</h4>
-            <input type="submit" name="informe" value="Generar Informe" class="btn btn-success" />
+            	<input type="submit" name="informe" value="Imprimir" class="btn btn-success" />
 			</div>
         </div>
 </form>
@@ -17,7 +17,7 @@
 			<th>Nombre</th>
 			<th>Apellidos</th>
 			<th>Matricula</th>
-			<th>Editar/Eliminar/Reporte</th>
+			<th>Editar / Eliminar / Horario</th>
 			</thead>
 	<?php 
 	if ($consulta!=false){
@@ -29,8 +29,8 @@
 		<td><?=$maestro['apellidos']?></td>
 		<td><?=$maestro['matricula']?></td>
 		<td><a href='<?=base_url()?>index.php/catedratico/editarMaestro/<?=$maestro['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-edit'></i></a> 
-		<a href='<?=base_url()?>index.php/catedratico/eliminarMaestro/<?=$maestro['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a>
-		<a href='<?=base_url()?>index.php/pdfs/generar/<?=$maestro['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-list-alt'></i></a></td>
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href='<?=base_url()?>index.php/catedratico/eliminarMaestro/<?=$maestro['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a>
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href='<?=base_url()?>index.php/pdfs/generar/<?=$maestro['id']?>' class='btn btn-success' target="_blank"><i class='glyphicon glyphicon-list-alt'></i></a></td>
 		</tr>
 	
 	<?php

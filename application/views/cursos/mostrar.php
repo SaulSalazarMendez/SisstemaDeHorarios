@@ -28,7 +28,7 @@
 						<th>Seccion</th>
 						<th>Horas</th>
 						<th>HorasDadas</th>
-						<th>Editar/Eliminar</th>
+						<th>Editar / Eliminar</th>
 					</tr>	
 				</thead>
 				<tbody>
@@ -47,7 +47,7 @@
 								echo "<td>".$row['horas_dadas']."</td>";
 								echo "<td>";
 									echo "<a href='".base_url()."index.php/cursos/editar/".$row['id']."' class='btn btn-info'><span class='glyphicon glyphicon-edit'></a></span>";
-									echo "&nbsp;&nbsp;";
+									echo "&nbsp;&nbsp;&nbsp;&nbsp;";
 									echo "<a href='".base_url()."index.php/cursos/eliminar/".$row['id']."' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a>";
 										
 								echo "</tr>";
