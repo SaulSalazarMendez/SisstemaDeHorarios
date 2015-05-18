@@ -59,7 +59,7 @@ class Pdfs extends CI_Controller {
  
 //Si tienes que imprimir carácteres ASCII estándar, puede utilizar las fuentes básicas como
 // Helvetica para reducir el tamaño del archivo.
-        $pdf->SetFont('helvetica', '', 12, '', true);
+        $pdf->SetFont('helvetica', '', 10, '', true);
  
 // Añadir una página
 // Este método tiene varias opciones, consulta la documentación para más información.
@@ -298,10 +298,170 @@ class Pdfs extends CI_Controller {
 // Imprimimos el texto con writeHTMLCell()
         $pdf->writeHTMLCell($w = 0, $h = 0, $x = '', $y = '', $html, $border = 0, $ln = 1, $fill = 0, $reseth = true, $align = '', $autopadding = true);
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 // ---------------------------------------------------------
 // Cerrar el documento PDF y preparamos la salida
 // Este método tiene varias opciones, consulte la documentación para más información.
         $nombre_archivo = utf8_decode("Maestros.pdf");
+        $pdf->Output($nombre_archivo, 'I');
+    }
+	
+	//----------Informe por bloques y seccion----------
+    public function generarBloques() {
+        $this->load->library('Pdf');
+        $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('Equipo2');
+        $pdf->SetTitle('Ejemplo de provincías con TCPDF');
+        $pdf->SetSubject('Tutorial TCPDF');
+        $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+ 
+// datos por defecto de cabecera, se pueden modificar en el archivo tcpdf_config_alt.php de libraries/config
+        //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE . ' 001', PDF_HEADER_STRING, array(0, 64, 255), array(0, 64, 128));
+        //$pdf->setFooterData($tc = array(0, 64, 0), $lc = array(0, 64, 128));
+ 
+// datos por defecto de cabecera, se pueden modificar en el archivo tcpdf_config.php de libraries/config
+        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+ 
+// se pueden modificar en el archivo tcpdf_config.php de libraries/config
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+ 
+// se pueden modificar en el archivo tcpdf_config.php de libraries/config
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+        $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+ 
+// se pueden modificar en el archivo tcpdf_config.php de libraries/config
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+ 
+//relación utilizada para ajustar la conversión de los píxeles
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+ 
+ 
+// ---------------------------------------------------------
+// establecer el modo de fuente por defecto
+        $pdf->setFontSubsetting(true);
+ 
+// Establecer el tipo de letra
+ 
+//Si tienes que imprimir carácteres ASCII estándar, puede utilizar las fuentes básicas como
+// Helvetica para reducir el tamaño del archivo.
+        $pdf->SetFont('helvetica', '', 12, '', true);
+ 
+// Añadir una página
+// Este método tiene varias opciones, consulta la documentación para más información.
+        $pdf->AddPage();
+		
+//fijar efecto de sombra en el texto
+        //$pdf->setTextShadow(array('enabled' => true, 'depth_w' => 0.2, 'depth_h' => 0.2, 'color' => array(196, 196, 196), 'opacity' => 1, 'blend_mode' => 'Normal'));
+ 
+// Establecemos el contenido para imprimir
+        //$id = $this->uri->segment(3);//$_POST['nombrem'];			   
+			   
+        //$provincia = $this->input->post('provincia');
+        //$provincias = $this->pdfs_model->getProvinciasSeleccionadas($provincia);
+        //foreach($provincias as $fila)
+        //{
+           // $prov = $fila['p.provincia'];
+        //}
+		$connStr = 'sqlite:db/horarios.db';
+		try{
+			$id = $this->uri->segment(3);
+			$conn = new PDO($connStr);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$queryma = $conn->query("SELECT nombre FROM carrera where id=$id ");
+			$rowsma = $queryma->fetchAll();
+		}catch( PDOException $Exception ) { 
+		       echo $Exception->getMessage() ."\n"; }
+			foreach($rowsma as $row){
+				$nom = $row['nombre'];
+			}   
+
+        //Comparar bloques
+		$bloques = '1';
+		while($bloques<=10){
+			
+		$secciones = '1';
+		while($secciones<=5){
+			 $connStr = 'sqlite:db/horarios.db';
+		try{
+			$id = $this->uri->segment(3);
+			$conn = new PDO($connStr);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$query1 = $conn->query("SELECT curso.bloque, curso.seccion, ee.nrc, ee.nombre, ee.creditos FROM ee INNER JOIN curso ON ee.carrera_id = $id AND ee.nrc = curso.ee_nrc AND curso.bloque =$bloques");
+			$rows1 = $query1->fetchAll();
+		}catch( PDOException $Exception ) { 
+		       echo $Exception->getMessage() ."\n"; }  
+			   
+			//preparamos y maquetamos el contenido a crear
+        $html = '';
+        $html .= "<style type=text/css>";
+        $html .= "th{color: #fff; font-weight: bold; background-color: #222}";
+        $html .= "td{background-color: #AAC7E3; color: #000000; border: 1px solid transparent}";
+        $html .= "</style>";
+        $html .= "<h2>Bloque ".$bloques." Seccion ".$secciones." </h2>";
+        $html .= "<table width='100%'>";
+        $html .= "<tr><th>NRC</th><th>Nombre</th><th>Créditos</th></tr>";
+			
+			foreach($rows1 as $row){
+			   $nombre = $row['nombre'];
+			   $NRC = $row['nrc'];
+			   $creditos = $row['creditos'];
+               $seccion = $row['seccion'];
+			   if($seccion == $secciones){
+				   $html .= "<tr><td class='id'>" . $NRC . "</td><td class='id'>" . $nombre . "</td><td class='id'>" . $creditos . "</td></tr>";
+			   }
+		
+		   }
+		   $html .= "</table><br/>";
+		   // Imprimimos el texto con writeHTMLCell()
+        $pdf->writeHTMLCell($w = 0, $h = 0, $x = '', $y = '', $html, $border = 0, $ln = 1, $fill = 0, $reseth = true, $align = '', $autopadding = true);
+		   $secciones = $secciones + 1;
+		}
+		$bloques = $bloques + 1;
+		}
+		
+        //provincias es la respuesta de la función getProvinciasSeleccionadas($provincia) del modelo
+        //foreach ($rows as $row){
+          //  $id_curso = $row['id'];
+            //$ee_nrc = $row['ee_nrc'];	
+			
+			//$html .= "<tr><td class='id'>" . $apellidos . "<br>" . $apellidos . "</td><td class='localidad'>" . $matricula . "</td></tr>";
+		//}
+		//$html .= "</table>";
+		
+		
+		
+		/*foreach ($provincias as $fila) 
+        {
+            $id = $fila['l.id'];
+            $localidad = $fila['l.localidad'];
+ 
+            $html .= "<tr><td class='id'>" . $id . "</td><td class='localidad'>" . $localidad . "</td></tr>";
+        }*/
+        //$html .= "</table>";
+ 
+// Imprimimos el texto con writeHTMLCell()
+        //$pdf->writeHTMLCell($w = 0, $h = 0, $x = '', $y = '', $html, $border = 0, $ln = 1, $fill = 0, $reseth = true, $align = '', $autopadding = true);
+ 
+// ---------------------------------------------------------
+// Cerrar el documento PDF y preparamos la salida
+// Este método tiene varias opciones, consulte la documentación para más información.
+        $nombre_archivo = utf8_decode("Bloques.pdf");
         $pdf->Output($nombre_archivo, 'I');
     }
 }

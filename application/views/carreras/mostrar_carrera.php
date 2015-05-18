@@ -15,20 +15,22 @@
                     		<thead id="thead">
 								<th>N&uacute;mero de carrera</th>
 								<th>Nombre</th>
-								<th>Editar / Eliminar</th>
+								<th>Editar / Eliminar / Horarios</th>
 							</thead>
 							<?php 
 								if($consultaCarrera != false)
 								{
 									foreach($consultaCarrera as $consulta)
-									{
+									{ 
 							?>
 										<tr>
         								<td><?= $consulta['id']?></td>
         								<td><?= $consulta['nombre'];?></td>
-        								<td><a href='<?=base_url()?>index.php/carreras/editarCarrera/<?=$consulta['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-edit'></i></a>
-        								&nbsp;&nbsp;&nbsp;&nbsp;<a href='<?=base_url()?>index.php/carreras/eliminarCarrera/<?=$consulta['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a></td>
-        					       
+        								<td>
+        									<a href='<?=base_url()?>index.php/carreras/editarCarrera/<?=$consulta['id']?>' class='btn btn-info'><i class='glyphicon glyphicon-edit'></i></a>
+        									&nbsp;&nbsp;&nbsp;&nbsp;<a href='<?=base_url()?>index.php/carreras/eliminarCarrera/<?=$consulta['id']?>' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i></a>
+        					       			&nbsp;&nbsp;&nbsp;&nbsp;<a href='<?=base_url()?>index.php/pdfs/generarBloques/<?=$consulta['id']?>' class='btn btn-success' target="_blank"><i class='glyphicon glyphicon-list-alt'></i></a>
+        					       		</td>
         								</tr>
         					<?php			
 									}
